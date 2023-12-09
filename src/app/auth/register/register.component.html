@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 offset-4 mt-5 bg-dark bg-opacity-75 rounded-4">
+      <form class="text-center mt-5" #form="ngForm" (ngSubmit)="registra(form)">
+        <div class="form-group">
+          <label for="register " class="mb-5 fs-2">Registrati ora</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-mail"
+            required
+            class="form-control"
+            ngModel
+          />
+        </div>
+        <div class="form-group mt-5">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+            class="form-control"
+            ngModel
+          />
+          <input
+            type="name"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+            class="form-control mt-5"
+            ngModel
+          />
+          <input
+            type="surname"
+            id="surname"
+            name="surname"
+            placeholder="Surname"
+            required
+            class="form-control mt-2"
+            ngModel
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-danger mt-3 mb-3"
+          [disabled]="form.invalid"
+        >
+          Registrati
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

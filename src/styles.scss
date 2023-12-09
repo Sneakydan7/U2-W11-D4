@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg-netflix {
+  background-image: url("./assets/images/1\ 5lyavS59mazOFnb55Z6znQ.png");
+  object-fit: cover;
+}
