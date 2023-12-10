@@ -33,14 +33,24 @@
   ],
   "favorites": [
     {
-      "userId": 2,
       "movieId": 460465,
-      "id": 6
+      "userId": 3,
+      "id": 1
     },
     {
-      "userId": 2,
+      "movieId": 567189,
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "movieId": 578701,
+      "userId": 4,
+      "id": 3
+    },
+    {
       "movieId": 632357,
-      "id": 8
+      "userId": 4,
+      "id": 4
     }
   ],
   "movies-popular": [

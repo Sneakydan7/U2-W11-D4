@@ -46,6 +46,6 @@ export class UserService {
     return null;
   }
   removeFavourite(id: number) {
-    return this.http.delete<Favourites>(`${this.apiURL}/favourites/${id}`);
+    return this.http.delete<Favourites>(`${this.apiURL}/favorites/${id}`);
   }
 }
