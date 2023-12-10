@@ -1,35 +1,37 @@
-<div class="row">
-  <div class="col-2 bg-dark vh-100 text-white text-center">
+<div class="row g-0" data-bs-theme="dark">
+  <div class="col-2 bg-dark vh-100 text-white text-center border-end">
     <p class="fs-4 border-bottom">Menu</p>
-    <p class="fs-6">Movies</p>
-    <p class="fs-6">Profile</p>
+    <a class="fs-6 nav-link active" *ngIf="utente"
+    [routerLink]="['/profile']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">Profile</a>
   </div>
-  <div class="col-10">
-    <h1 class="text-center pt-5 mb-5">I FILM PIU' POPOLARI !</h1>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-3" *ngFor="let movie of movies">
-          <div class="card">
+  <div class="col-10 bg-dark ">
+    
+    <div class="container ">
+      <div class="row calc overflow-y-auto">
+        <div class="col-3 mb-5" *ngFor="let movie of movies">
+          <div class="card h-100">
             <img
               src="http://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
               class="card-img-top"
+              style="height: 400px;"
               alt="copertina {{ movie.title }}"
             />
             <div class="card-body">
-              <h5 class="card-title">{{ movie.title }}</h5>
-              <p class="card-text">
+              <h5 class="card-title text-truncate">{{ movie.title }}</h5>
+              <p class="card-text text-truncate">
                 {{ movie.overview }}
               </p>
             </div>
             <div class="ms-2 mb-2">
               <a
                 href="#"
-                class="btn btn-warning"
-                (click)="addoRem(movie.id)"
+                class="btn btn-danger"
+                (click)="faveOrNot(movie.id)"
                 [ngStyle]="{ color: isFavourite(movie.id) ? 'red' : 'white' }"
-                ><i class="bi bi-suit-heart-fill"></i
-              ></a>
+                ><i class="far fa-heart"></i>
+              </a>
             </div>
           </div>
         </div>

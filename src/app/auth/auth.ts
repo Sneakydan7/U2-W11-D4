@@ -3,8 +3,7 @@ export interface Auth {
   user: {
     id: number;
     email: string;
-    nome: string;
-    cognome: string;
+    name: string;
     pfp: string;
   };
 }

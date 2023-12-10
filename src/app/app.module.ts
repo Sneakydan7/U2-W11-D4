@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Route[] = [
   {
@@ -28,6 +29,10 @@ const routes: Route[] = [
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path:'profile',
+    component:ProfileComponent
+  }
 ];
 
 @NgModule({
@@ -37,6 +42,7 @@ const routes: Route[] = [
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

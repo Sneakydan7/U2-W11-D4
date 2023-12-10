@@ -3,8 +3,7 @@ import { Movie } from 'src/app/models/movies';
 import { UserService } from 'src/app/service/user.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Favourites } from 'src/app/models/favourites';
-import { User } from 'src/app/models/user';
-
+import { Auth } from 'src/app/auth/auth';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,14 +13,18 @@ export class HomeComponent implements OnInit {
   movies: Movie[] | undefined;
   userId: number = 0;
   favourite!: Favourites[];
-
+utente! : Auth | null
   constructor(private srv: UserService, private authSrv: AuthService) {}
 
   ngOnInit(): void {
     this.userId = this.srv.getUserId();
     this.srv.getMovies().subscribe((movies: Movie[]) => {
       this.movies = movies;
-      this.getFavourite();
+      this.getFave();
+
+      this.authSrv.user$.subscribe((_user) => {
+        this.utente = _user;
+      });
       console.log(this.movies);
     });
   }
@@ -33,32 +36,33 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  addoRem(movieId: number) {
+  faveOrNot(movieId: number) {
     if (this.isFavourite(movieId)) {
-      let val: any = this.favourite.find((movie) => movie.movieId === movieId);
-      if (val) {
-        this.removeFavourite(val.id);
+      let faveMovie: any = this.favourite.find((movie) => movie.movieId === movieId);
+      if (faveMovie) {
+        this.removeFavourite(faveMovie.id);
       }
     } else {
       this.addFavourite(movieId);
     }
   }
 
-  removeFavourite(id: number) {
-    this.srv.removeFavourite(id).subscribe(() => {
-      this.getFavourite();
-    });
-  }
 
   addFavourite(movieId: number) {
     this.srv
       .addFavourite(movieId, this.userId)
       .subscribe((favourite: Favourites) => {
-        this.getFavourite();
+        this.getFave();
       });
   }
 
-  getFavourite() {
+  removeFavourite(id: number) {
+    this.srv.removeFavourite(id).subscribe(() => {
+      this.getFave();
+    });
+  }
+
+  getFave() {
     this.srv.getFavourite().subscribe((favourite: Favourites[]) => {
       let userfavourite: Favourites[] = favourite.filter(
         (movie) => movie.userId === this.userId

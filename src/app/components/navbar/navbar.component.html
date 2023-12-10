@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark" data-bs-theme="dark" >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" ><img src="../../../assets/images/NETFLICS-10-12-2023.png" alt="" style="width: 150px;"></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -44,15 +44,17 @@
           >
         </li>
       </ul>
-
-      <button
-        type="button"
-        class="btn btn-danger ms-2 float-end"
-        *ngIf="utente"
-        (click)="logout()"
-      >
-        Logout
+      <div class="d-flex align-items-baseline ">
+        <h5 *ngIf="utente" class="fst-italic text-white smaller ">Welcome back,  {{utente.user.name}}</h5>
+        <button
+          type="button"
+          class="btn btn-danger ms-2 float-end"
+          *ngIf="utente"
+          (click)="logout()"
+        >
+        <i class="fas fa-power-off"></i>
       </button>
+    </div>
     </div>
   </div>
 </nav>

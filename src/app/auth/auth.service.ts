@@ -50,7 +50,6 @@ export class AuthService {
 
   register(data: {
     nome: string;
-    cognome: string;
     email: string;
     password: string;
   }) {

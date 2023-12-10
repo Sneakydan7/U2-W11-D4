@@ -1,0 +1,8 @@
+.calc{
+    height: calc(100vh - 62px);
+}
+:host{
+    display: block;
+    overflow-y: hidden;
+    height: calc(100vh - 62px);
+}

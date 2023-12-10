@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
   registra(form: NgForm) {
     try {
       this.authSrv.register(form.value).subscribe();
+      alert('Registrazione avvenuta con successo')
+      this.router.navigate(['/signin']);
     } catch (error: any) {
       alert(error);
       this.router.navigate(['/signin']);

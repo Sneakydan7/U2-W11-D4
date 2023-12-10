@@ -9,7 +9,26 @@
     {
       "email": "daniele.010@hotmail.it",
       "password": "$2a$10$X7UNI7crYroNjUmV9pSTMOcqEjbH/fsXcpBGHHYWcDhRQYpKEJHFi",
+      "name": "Daniele",
       "id": 3
+    },
+    {
+      "email": "ciao@ciao.it",
+      "password": "$2a$10$m.x53qwWpzts7uKByocBF.NZlZnurQTkEpNNRXuco4nOaVlUwAmtG",
+      "name": "ciao",
+      "id": 4
+    },
+    {
+      "email": "paperino@paperino.it",
+      "password": "$2a$10$R2qHOzcpvPOUMhQcWgZP2OoAVkQAGnTGa9gRZvEGk/cTiP.ZUGms.",
+      "name": "Paperino",
+      "id": 5
+    },
+    {
+      "email": "pape@rino.it",
+      "password": "$2a$10$ephpJvVES9R4P4TMmTawQO3ZmqblvM7fTRWkrixsj5mtMnr2nYi76",
+      "name": "Paperino",
+      "id": 6
     }
   ],
   "favorites": [

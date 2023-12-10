@@ -1,3 +1,7 @@
-.bg-transparent {
-  background-color: rgba(0, 0, 0, 0.25);
+:host{
+  display: block;
+  background-image: url("../../../assets/images/1\ 5lyavS59mazOFnb55Z6znQ.png");
+ height: calc(100vh - 62px);
+ background-size: cover;  
+ background-position: center;
 }
